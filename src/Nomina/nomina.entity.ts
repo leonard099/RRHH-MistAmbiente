@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryColumn } from "typeorm";
+import { Registro } from "src/Registros/registro.entity";
+import { Column, Entity, OneToMany, PrimaryColumn } from "typeorm";
 
 @Entity()
 export class Empleado {
@@ -16,4 +17,7 @@ export class Empleado {
 
     @Column()
     Categoria: string;
+
+    @OneToMany(() => Registro, registro => registro.empleado)
+    registros: Registro[];
 }

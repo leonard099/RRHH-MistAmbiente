@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { NominaModule } from './Nomina/nomina.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { RegistroModule } from './Registros/registro.module';
 
 @Module({
   imports: [
@@ -19,7 +20,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         return config;
       }    
     }),
-    NominaModule],
+    NominaModule,RegistroModule],
   controllers: [AppController],
   providers: [AppService],
 })
